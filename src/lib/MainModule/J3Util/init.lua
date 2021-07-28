@@ -9,7 +9,7 @@
 --]] --
 --
 -- Define the version
-local J3UtilVersion = '1.0.0 b1'
+local J3UtilVersion = '1.0.0 b2'
 
 -- Define Submodules
 local Instance = require(script.Instance);
@@ -23,12 +23,12 @@ local IndexedAttributes = {};
 
 -- Define the table for J3Util
 local J3Util = setmetatable(
-                 {}, {
+  {}, {
     __index = function( t, k )
       if string.lower(k) == '_version' then return J3UtilVersion end
     end;
   }
-               );
+);
 
 -- Function: J3Util:AttributeInfo()
 --- Describes J3Util Attributes
@@ -75,7 +75,7 @@ J3Util.console = console;
 
 --  Return yet another metatable
 return setmetatable(
-         {}, {
+  {}, {
     __index = function( t, k )
       -- Indexing Function
       if J3Util[k] then
@@ -121,4 +121,4 @@ return setmetatable(
       end
     end;
   }
-       );
+);

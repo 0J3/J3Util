@@ -18,7 +18,7 @@ local TableUtil = require(script.Parent.Table);
 -- Function: Instance.wrap
 --- Wraps an Instance using a metatable to have more propreties
 instance.wrap = TableUtil.funcToTable(
-                  function( inst )
+  function( inst )
     local IndexedAttributes = {};
     local IndexedNilAttributes = {};
     local function hasProperty( prop )
@@ -71,15 +71,15 @@ instance.wrap = TableUtil.funcToTable(
     end;
 
     local wrapped = setmetatable(
-                      {}, {
+      {}, {
         __index = indexFunction;
         __newindex = newindexFunction;
         __tostring = function() return inst.Name; end;
       }
-                    );
+    );
     return wrapped
   end
-                );
+);
 instance.wrap.prototype = require(script.Prototype)
 
 -- Function: Instance.new
@@ -139,9 +139,9 @@ instance.new = function( a, b )
     end
 
     return error(
-             '[E004] Type of ' .. invalidType .. ' is invalid, it must be ' ..
-               invalidTypeMustBe, 2
-           );
+      '[E004] Type of ' .. invalidType .. ' is invalid, it must be ' .. invalidTypeMustBe,
+      2
+    );
   end
 
   inst = instance.wrap(inst);

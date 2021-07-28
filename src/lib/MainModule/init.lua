@@ -22,9 +22,9 @@ elseif game:GetService('ReplicatedStorage'):FindFirstChild('ModuleCache'):FindFi
   'J3Util'
 ) then
   return game:GetService('ReplicatedStorage'):FindFirstChild('ModuleCache')
-           :FindFirstChild(
-             'J3Util'
-           )
+    :FindFirstChild(
+      'J3Util'
+    )
 end
 
 --- STEP: Init
