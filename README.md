@@ -2,7 +2,13 @@
 
 A Roblox Utility Library
 
-## USAGE OF ROJO IS SLIGHTLY DISCOURAGED FOR THIS PROJECT
+## Loader
+
+The custom loader (`require(7162009730)` - source found in `src/loader`) checks for a cached J3Util version, and loads it if found, otherwise it loads the actual main module and moves it to `ReplicatedStorage.ModuleCache`(`.J3Util`).
+
+## Rojo
+
+Using Rojo for this library is slightly discouraged.
 
 This project's Rojo version is mainly for if you're running a fork of it, and for me when testing.
 To actually use this library, I strongly suggest using `require(7162009730)` instead.
@@ -22,4 +28,4 @@ From there, **use `require(7162009730)`** to load J3Util, or use **`require(requ
 
 ## Running on the client
 
-(Requires usage of the loader `require(7162009730)`) Once loaded on the server, use **`require(game:GetService('ReplicatedStorage'):WaitForChild('ModuleCache'):WaitForChild('J3Util'))`** to load it (from the Custom Module Cache)
+(Requires usage of the loader - `require(7162009730)` - being run on the **Server**) Once loaded on the server, use **`require(game:GetService('ReplicatedStorage'):WaitForChild('ModuleCache'):WaitForChild('J3Util'))`** to load it (from the Custom Module Cache)
