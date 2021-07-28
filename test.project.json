@@ -1,0 +1,66 @@
+{
+	"name": "J3Util",
+	"tree": {
+		"$className": "DataModel",
+
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage"
+		},
+
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"J3Util": {
+				"$className": "Folder",
+				"MainModule": {
+					"$path": "src/lib/MainModule"
+				},
+				"Loader": {
+					"$path": "src/loader"
+				},
+				"RunTests": {
+					"$path": "src/test"
+				}
+			}
+		},
+
+		"StarterPlayer": {
+			"$className": "StarterPlayer",
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts"
+			}
+		},
+
+		"Workspace": {
+			"$className": "Workspace",
+			"$properties": {
+				"FilteringEnabled": true
+			},
+			"Baseplate": {
+				"$className": "Part",
+				"$properties": {
+					"Anchored": true,
+					"Color": [0.38823, 0.37254, 0.38823],
+					"Locked": true,
+					"Position": [0, -10, 0],
+					"Size": [512, 20, 512]
+				}
+			}
+		},
+		"Lighting": {
+			"$className": "Lighting",
+			"$properties": {
+				"Ambient": [0, 0, 0],
+				"Brightness": 2,
+				"GlobalShadows": true,
+				"Outlines": false,
+				"Technology": "Future"
+			}
+		},
+		"SoundService": {
+			"$className": "SoundService",
+			"$properties": {
+				"RespectFilteringEnabled": true
+			}
+		}
+	}
+}
