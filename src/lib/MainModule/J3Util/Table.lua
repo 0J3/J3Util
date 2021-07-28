@@ -28,6 +28,10 @@ Table.shift = function( self )
   self:remove(1);
   return item;
 end
+Table.push = function( self, o )
+  table.insert(self, o);
+  return true;
+end
 
 Table.wrap = function( self )
   return setmetatable(self, { __index = Table; __newindex = self });
