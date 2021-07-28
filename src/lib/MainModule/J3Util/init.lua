@@ -9,7 +9,7 @@
 --]] --
 --
 -- Define the version
-local J3UtilVersion = '1.0.0 b2'
+local J3UtilVersion = '1.0.0 b4'
 
 -- Define Submodules
 local Instance = require(script.Instance);
@@ -68,6 +68,7 @@ J3Util.Instance = Instance;
 -- Property: J3Util.Table
 --- An improved version of Table
 J3Util.table = table;
+J3Util.Table = table;
 
 -- Property: J3Util.Console
 --- Basic Re-Implemented Javascript Console
@@ -92,16 +93,16 @@ return setmetatable(
           return J3UtilAttributes[k];
         else
           error(
-            '[E002] The proprety ' .. k .. ' does not exist on J3Util at version ' ..
-              rawget(t, '_version') ..
+            '[E002] The proprety ' .. tostring(k) ..
+              ' does not exist on J3Util at version ' .. rawget(t, '_version') ..
               ', however, it does exist as an attribute!\nCall J3Util:AttributeInfo() for more information on J3Util\'s Custom Attribute Functionality',
             2
           )
         end
       else
         error(
-          '[E002] The proprety ' .. k .. ' does not exist on J3Util at version ' ..
-            rawget(t, '_version') ..
+          '[E002] The proprety ' .. tostring(k) .. ' does not exist on J3Util at version ' ..
+            tostring(J3UtilVersion) ..
             ' - Try seeing if a newer version of J3Util is available, or if you have a typo in your code.',
           2
         )
@@ -113,8 +114,8 @@ return setmetatable(
         J3UtilAttributes[k] = v;
       else
         error(
-          '[E003] Attempt to set proprety ' .. k .. ' on J3Util Table (' .. tostring(t) ..
-            ') to ' .. v ..
+          '[E003] Attempt to set proprety ' .. tostring(k) .. ' on J3Util Table (' ..
+            tostring(t) .. ') to ' .. v ..
             ' which is disallowed! To extend J3Util, use a metatable which indexes it, or use Attributes.\nCall J3Util:AttributeInfo() for more information on J3Util\'s Custom Attribute Functionality.',
           2
         )

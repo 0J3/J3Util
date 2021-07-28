@@ -7,14 +7,15 @@ return function()
         'create an instance of type Folder using only the argument of type string',
         function()
           local inst = J3Util.Instance.new('Folder')
-          expect(inst.ClassName == 'Folder' and inst.raw.ClassName == 'Folder').to.be.ok()
+          expect(inst.ClassName == 'Folder').to.equal(true)
+          expect(inst.raw.ClassName == 'Folder').to.equal(true)
         end
       )
       it(
         'be wrapped, allowing defining non-existant propreties', function()
           local inst = J3Util.Instance.new('Folder')
           inst.test = 'success'
-          expect(inst.test == 'success').to.be.ok()
+          expect(inst.test == 'success').to.equal(true)
         end
       )
       it(
@@ -24,7 +25,7 @@ return function()
           expect(
             inst.ClassName == 'Model' and inst.raw.ClassName == 'Model' and inst.Name ==
               'success' and inst.raw.Name == 'success'
-          ).to.be.ok()
+          ).to.equal(true)
         end
       )
       it(
@@ -35,7 +36,8 @@ return function()
           sub.Name = 'sub'
           sub.Parent = inst.raw
 
-          expect(inst.sub.raw).to.be.ok()
+          expect(inst.sub.raw).to.be.a('userdata')
+          expect(inst.sub.raw.name).to.equal('sub')
         end
       )
     end
@@ -53,22 +55,22 @@ return function()
             return 's' .. uwu;
           end
           local inst = J3Util.Instance.new('Folder')
-          expect(inst.test == 'success').to.be.ok()
-          expect(inst.testF() == 'success2').to.be.ok()
-          expect(inst.testFWithArgs('uccess') == 'success').to.be.ok()
-          expect(inst:testFWithArgs2('uccess') == 'success').to.be.ok()
+          expect(inst.test).to.equal('success')
+          expect(inst.testF()).to.equal('success2')
+          expect(inst.testFWithArgs('uccess')).to.equal('success')
+          expect(inst:testFWithArgs2('uccess')).to.equal('success')
           local inst2 = J3Util.Instance.new('Folder')
-          expect(inst2.test == 'success').to.be.ok()
-          expect(inst2.testF() == 'success').to.be.ok()
-          expect(inst2.testFWithArgs('uccess') == 'success').to.be.ok()
-          expect(inst2:testFWithArgs2('uccess') == 'success').to.be.ok()
+          expect(inst2.test == 'success').to.equal(true)
+          expect(inst2.testF()).to.equal('success2')
+          expect(inst2.testFWithArgs('uccess') == 'success').to.equal(true)
+          expect(inst2:testFWithArgs2('uccess') == 'success').to.equal(true)
         end
       )
       it(
         'have a proprety named isWrapped which should be true on the prototype',
         function()
           local inst = J3Util.Instance.new('Folder')
-          expect(inst.isWrapped).to.be.ok()
+          expect(inst.isWrapped).to.equal(true)
         end
       )
       it(
@@ -79,7 +81,7 @@ return function()
           sub.Name = 'sub';
           sub.Parent = inst;
 
-          expect(J3Util.Instance.wrap(inst).sub.raw).to.be.ok()
+          expect(J3Util.Instance.wrap(inst).sub.raw).to.be.a('userdata')
         end
       )
     end

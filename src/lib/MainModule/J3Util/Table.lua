@@ -15,4 +15,22 @@ end;
 
 Table.split = table.concat
 
+Table.pop = function( self )
+  local pos = #self;
+  if pos == 0 then error('Cannot pop an empty table!', 2) end
+  local item = self[pos];
+  self:remove(pos);
+  return item;
+end;
+Table.shift = function( self )
+  if #self == 0 then error('Cannot shift an empty table!', 2) end
+  local item = self[1];
+  self:remove(1);
+  return item;
+end
+
+Table.wrap = function( self )
+  return setmetatable(self, { __index = Table; __newindex = self });
+end;
+
 return Table;
