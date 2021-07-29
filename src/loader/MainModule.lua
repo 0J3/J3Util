@@ -1,6 +1,6 @@
 -- Standard J3Util Loader
 -- Unminified
--- Copyright (c) 2021 0J3. All Rights Reserved.
+-- Copyright (c) 2021 0J3#0001. All Rights Reserved.
 --
 -- Loads https://www.roblox.com/library/7161939003/
 --
