@@ -15,6 +15,8 @@ local J3UtilVersion = '1.0.0 b4'
 local Instance = require(script.Instance);
 local console = require(script.Console);
 local table = require(script.Table);
+local queue = require(script.Queue);
+local stack = require(script.Stack);
 
 -- Define Attributes Things
 local J3UtilAttributes = {};
@@ -69,6 +71,16 @@ J3Util.Instance = Instance;
 --- An improved version of Table
 J3Util.table = table;
 J3Util.Table = table;
+
+-- Property: J3Util.Queue
+--- A queue module
+J3Util.queue = queue;
+J3Util.Queue = queue;
+
+-- Property: J3Util.Stack
+--- A stack module
+J3Util.stack = stack;
+J3Util.Stack = stack;
 
 -- Property: J3Util.Console
 --- Basic Re-Implemented Javascript Console
